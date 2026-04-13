@@ -28,7 +28,6 @@
       font-family: Inter, Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
-      overflow-x: hidden;
     }
 
     .app {
@@ -620,88 +619,13 @@
         height: auto;
         border-right: none;
         border-bottom: 1px solid var(--line);
-        padding: 20px 16px 18px;
       }
-      .content { padding: 20px 16px 34px; }
-      .class-panel { margin-top: 14px; }
+      .content { padding: 24px 18px 34px; }
     }
 
     @media (max-width: 560px) {
-      /* Layout */
-      .stats { grid-template-columns: 1fr 1fr; }
-      .resource-links { flex-direction: column; }
-      .content { padding: 16px 12px 28px; }
-      .card { padding: 18px 16px; }
-
-      /* Hero */
-      .hero { flex-direction: column; gap: 14px; margin-bottom: 16px; }
-      .hero-copy h2 { font-size: 26px; }
-      .hero-copy p { font-size: 14px; }
-
-      /* Class header */
-      .class-header h3 { font-size: 22px; }
-      .lesson-topic h5 { font-size: 18px; }
-      .section-block h4 { font-size: 16px; }
-
-      /* Tags */
-      .class-meta { gap: 7px; }
-      .tag { font-size: 11px; padding: 6px 10px; }
-
-      /* Piano: allow horizontal scroll, shrink wrapper padding */
-      .piano-wrap { margin: 18px 0; padding-bottom: 10px; }
-
-      /* Intervals grid: 2 columns on small phones */
-      .intervals-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-      .iv-card { padding: 12px 8px; }
-      .iv-n { font-size: 1.2rem; }
-      .iv-name { font-size: 0.76rem; }
-      .iv-ex { font-size: 0.58rem; }
-
-      /* Scale degree bubbles: allow wrap + scroll */
-      .sf { gap: 3px; overflow-x: auto; padding-bottom: 6px; flex-wrap: nowrap; }
-      .sn { width: 34px; height: 34px; font-size: 0.68rem; }
-      .ssp { font-size: 0.52rem; }
-
-      /* Chords grid: 2 columns */
-      .chords-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-      .cc { padding: 12px; }
-      .cn { font-size: 0.88rem; }
-      .ct { font-size: 0.76rem; }
-
-      /* Dark breakdown block */
-      .ddark { padding: 20px 16px; }
-      .dbig { font-size: 1.6rem; word-break: break-word; }
-      .dsym { font-size: 1.1rem; }
-      .dtitle { font-size: 0.9rem; }
-      .ddesc { font-size: 0.82rem; }
-
-      /* Formula block */
-      .formula { font-size: 0.7rem; padding: 14px 14px; }
-
-      /* Component card */
-      .component-card { padding: 14px; border-radius: 14px; }
-      .component-stack { gap: 12px; }
-
-      /* Resource links */
-      .resource-link { padding: 10px 12px; font-size: 13px; }
-
-      /* Sidebar brand */
-      .brand h1 { font-size: 20px; }
-      .brand p { font-size: 13px; }
-      .class-link { padding: 12px; border-radius: 14px; }
-      .class-link strong { font-size: 14px; }
-
-      /* Circle SVG: let it scale */
-      #csvg { width: 100%; max-width: 280px; height: auto; }
-      .circle-wrap { gap: 16px; }
-      .ckey { font-size: 1.5rem; }
-    }
-
-    @media (max-width: 380px) {
-      .intervals-grid { grid-template-columns: repeat(2, 1fr); }
-      .chords-grid { grid-template-columns: 1fr; }
       .stats { grid-template-columns: 1fr; }
-      .dbig { font-size: 1.3rem; }
+      .resource-links { flex-direction: column; }
     }
   </style>
 </head>
@@ -711,7 +635,7 @@
       <div class="brand">
         <div class="eyebrow">Repositorio</div>
         <h1>Clases</h1>
-        <p>Biblioteca de clases de teoría musical. Cada clase incluye contenido interactivo, ejemplos sonoros y referencias de apoyo.</p>
+        <p>Template funcional del repositorio. Clase 1 mantiene el contenido interactivo y Clase 2 muestra cómo crecería la biblioteca.</p>
       </div>
 
       <div class="class-list">
@@ -746,15 +670,31 @@
             <a class="mini-link" href="#ejemplo-ej-2">Ejercicio 2</a>
           </div>
         </div>
+
+        <div class="class-group">
+          <a class="class-link" href="#clase-03">
+            <small>Clase 03</small>
+            <strong>Voicing: acordes en piano y guitarra</strong>
+          </a>
+          <div class="class-subnav">
+            <div class="class-subnav-title">Temas</div>
+            <nav class="topic-list">
+              <a class="topic-link" href="#voicing-intro">I. ¿Qué es un voicing?</a>
+              <a class="topic-link" href="#voicing-piano">II. El acorde en el piano</a>
+              <a class="topic-link" href="#voicing-guitarra">III. El acorde en la guitarra</a>
+              <a class="topic-link" href="#voicing-ejercicio">Ejercicio práctico</a>
+            </nav>
+          </div>
+        </div>
       </div>
     </aside>
 
     <main class="content">
       <section class="hero">
         <div class="hero-copy">
-          <div class="eyebrow">Clases interactivas</div>
+          <div class="eyebrow">Clase interactiva</div>
           <h2>Repositorio de clases musicales</h2>
-          <p>Un espacio para revisar, escuchar y explorar los contenidos de cada clase. Los teclados, intervalos y acordes suenan directamente desde el navegador, sin necesidad de ningún instrumento.</p>
+          <p>Esta versión prioriza que el HTML funcione de forma estable. Los links de YouTube están incluidos como enlaces, no como embeds, para evitar permisos de red y fallos de preview.</p>
         </div>
         <div>
           <button class="btn" onclick="document.getElementById('clase-01').scrollIntoView({behavior:'smooth'})">Ir a la clase</button>
@@ -763,43 +703,40 @@
 
       <section class="top-grid">
         <div class="card">
-          <h3>Contenido disponible</h3>
-          <p>La Clase 01 cubre los fundamentos completos de la teoría musical con ejemplos sonoros integrados. La Clase 02 introduce la práctica instrumental con ejercicios de ejecución.</p>
+          <h3>Estructura actual</h3>
+          <p>Clase 1 contiene los fundamentos de teoría musical. Clase 2 introduce los primeros acordes y ritmo. Clase 3 explora el voicing: cómo piano y guitarra construyen el mismo acorde de forma distinta.</p>
           <div class="stats">
             <div class="stat">
-              <div class="value">2</div>
+              <div class="value">3</div>
               <div class="label">Clases</div>
             </div>
             <div class="stat">
-              <div class="value">7</div>
-              <div class="label">Temas</div>
+              <div class="value">10</div>
+              <div class="label">Temas activos</div>
             </div>
             <div class="stat">
-              <div class="value">3</div>
-              <div class="label">Ejercicios</div>
+              <div class="value">OK</div>
+              <div class="label">Preview</div>
             </div>
           </div>
         </div>
 
         <div class="card">
-          <h3>Cómo usar este repositorio</h3>
-          <p>Navega por los temas desde la barra lateral o usa los accesos rápidos dentro de cada clase. Toca las teclas, intervalos y acordes directamente en pantalla para escucharlos en tiempo real.</p>
+          <h3>Nota</h3>
+          <p>Quité los iframes de YouTube y las fuentes externas para que el preview no dependa de permisos de red. Los videos siguen presentes como links directos dentro de cada tema.</p>
         </div>
       </section>
 
-      <!-- ============================================================
-           CLASE 01
-      ============================================================= -->
       <section class="class-panel card" id="clase-01">
         <div class="class-header">
           <div>
             <div class="eyebrow">Clase 01</div>
             <h3>El Lenguaje de la Música</h3>
-            <p>Desde la primera nota hasta nombrar un acorde complejo: los fundamentos esenciales de la teoría musical en una sola clase.</p>
+            <p>Desde la primera nota hasta nombrar un acorde complejo: una clase base para entender los fundamentos de la teoría musical.</p>
             <div class="class-meta">
               <span class="tag">Teoría musical</span>
               <span class="tag">Interactiva</span>
-              <span class="tag">Con audio</span>
+              <span class="tag">Sin ejercicios aún</span>
             </div>
           </div>
         </div>
@@ -816,27 +753,26 @@
 
         <div class="section-block">
           <h4>Propósito de la clase</h4>
-          <p>Construir un mapa completo del lenguaje musical: entender cómo se organizan las notas, cómo se miden las distancias entre ellas, cómo se forman las escalas y los acordes, y cómo se leen sus nombres. Al terminar esta clase, el estudiante tiene el vocabulario básico para entender cualquier pieza o conversación musical.</p>
+          <p>Presentar de forma clara y visual los fundamentos esenciales de la teoría musical, permitiendo que el estudiante no solo lea el contenido, sino que también escuche notas, intervalos y acordes dentro de la misma experiencia.</p>
         </div>
 
         <div class="section-block">
           <h4>Contenido principal</h4>
 
-          <!-- I. Notas -->
           <article class="lesson-topic" id="notas">
             <h5>I. Notas musicales</h5>
             <p class="topic-subtitle">Los ladrillos de toda música.</p>
-            <p>En la música occidental, todo se construye con <strong>12 notas</strong>. Siete son naturales (Do, Re, Mi, Fa, Sol, La, Si) y cinco son alteradas —sostenidos o bemoles según el contexto. El teclado es la manera más clara de visualizar esta estructura: las teclas blancas son las notas naturales y las negras son las alteradas.</p>
+            <p>En la música occidental, todo se construye con <strong>12 notas</strong>. El teclado ayuda a visualizar con claridad las notas naturales y alteradas.</p>
             <div class="component-stack">
               <div class="component-card">
-                <h6>Teclado interactivo</h6>
-                <p>Toca cualquier tecla para escuchar su sonido. Las teclas negras muestran los dos nombres posibles de cada nota alterada.</p>
+                <h6>Piano interactivo</h6>
+                <p>Componente independiente para explorar las notas y escuchar cada tecla.</p>
                 <div class="piano-wrap"><div id="piano-main"></div></div>
                 <p class="tap-hint">Toca cualquier tecla para escucharla</p>
               </div>
               <div class="component-card">
                 <h6>Video de apoyo</h6>
-                <p>Introducción visual a las notas del teclado y su organización.</p>
+                <p>Referencia externa para reforzar este tema.</p>
                 <div class="video-link-row">
                   <a class="video-link" href="https://www.youtube.com/watch?v=G7gIQBV2s-g" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
                 </div>
@@ -844,21 +780,20 @@
             </div>
           </article>
 
-          <!-- II. Intervalos -->
           <article class="lesson-topic" id="intervalos">
             <h5>II. Intervalos</h5>
             <p class="topic-subtitle">La distancia entre notas.</p>
-            <p>Un intervalo es la distancia entre dos notas, medida en semitonos. Cada intervalo tiene un nombre y una calidad sonora distinta: algunos suenan estables, otros tensos, otros melancólicos. Reconocer intervalos de oído es una de las habilidades fundamentales de la teoría musical.</p>
+            <p>Los intervalos definen la relación entre sonidos. Aquí puedes escucharlos como una unidad independiente.</p>
             <div class="component-stack">
               <div class="component-card">
                 <h6>Tarjetas de intervalos</h6>
-                <p>Cada tarjeta muestra el número de semitonos, el nombre del intervalo y el ejemplo desde Do. Al tocar una, escucharás primero Do y luego la nota de destino.</p>
+                <p>Componente independiente para escuchar la distancia entre Do y cada nota destino.</p>
                 <div id="ig" class="intervals-grid"></div>
                 <p class="tap-hint">Toca cualquier intervalo para escucharlo</p>
               </div>
               <div class="component-card">
                 <h6>Video de apoyo</h6>
-                <p>Referencia auditiva para aprender a reconocer intervalos de oído.</p>
+                <p>Referencia audiovisual para reforzar el oído y el concepto.</p>
                 <div class="video-link-row">
                   <a class="video-link" href="https://www.youtube.com/shorts/VTrYZgxe-WQ" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
                 </div>
@@ -866,38 +801,36 @@
             </div>
           </article>
 
-          <!-- III. Escalas -->
           <article class="lesson-topic" id="escalas">
             <h5>III. Las escalas</h5>
-            <p class="topic-subtitle">Colecciones de notas con identidad.</p>
-            <p>Una escala es una selección ordenada de notas que define el color y el carácter de una pieza. No todas las notas se usan en una misma tonalidad: la escala establece cuáles suenan "dentro" y cuáles quedan fuera. Existen muchos tipos de escalas —mayor, menor, pentatónica, modal— cada una con una secuencia de intervalos propia.</p>
+            <p class="topic-subtitle">Organización de notas.</p>
+            <p>Una escala es una selección ordenada de notas. Este tema queda desacoplado del resto para que pueda crecer con más ejemplos sin afectar otros componentes.</p>
             <div class="component-card">
               <h6>Video de apoyo</h6>
-              <p>Introducción al concepto de escala y su papel en la música.</p>
+              <p>Introducción conceptual al tema de escalas.</p>
               <div class="video-link-row">
-                <a class="video-link" href="https://www.youtube.com/watch?v=OdYIS8KXdFI" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
+                <a class="video-link" href="https://www.youtube.com/watch?v=xIDQnoUcZLc" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
               </div>
             </div>
           </article>
 
-          <!-- IV. Escala mayor -->
           <article class="lesson-topic" id="escala-mayor">
             <h5>IV. Escala mayor</h5>
-            <p class="topic-subtitle">La fórmula más importante de la teoría musical.</p>
-            <p>La escala mayor es la base de la mayoría de la música occidental. Su sonido se percibe como alegre o brillante, y siempre sigue la misma secuencia de tonos (T) y semitonos (S) sin importar desde qué nota se construya. Esa fórmula constante es la que le da su identidad.</p>
+            <p class="topic-subtitle">La fórmula base.</p>
+            <p>La escala mayor sigue siempre la misma secuencia de tonos y semitonos. Este bloque usa componentes propios para fórmula, selector y teclado.</p>
             <div class="formula">T  –  T  –  S  –  T  –  T  –  T  –  S
 (2) (2) (1) (2) (2) (2) (1) semitonos</div>
             <div class="component-stack">
               <div class="component-card">
-                <h6>Constructor de escala mayor</h6>
-                <p>Selecciona una tónica para ver los grados de su escala mayor y las notas que la forman resaltadas en el teclado.</p>
+                <h6>Constructor de escala</h6>
+                <p>Selector y visual de grados en un componente independiente.</p>
                 <div id="scale-sel" class="scale-sel"></div>
                 <div id="sf" class="sf"></div>
                 <div class="piano-wrap"><div id="piano-scale"></div></div>
               </div>
               <div class="component-card">
                 <h6>Video de apoyo</h6>
-                <p>Explicación detallada de la fórmula de la escala mayor y cómo aplicarla en cualquier tonalidad.</p>
+                <p>Explicación complementaria de la escala mayor.</p>
                 <div class="video-link-row">
                   <a class="video-link" href="https://www.youtube.com/watch?v=xIDQnoUcZLc" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
                 </div>
@@ -905,15 +838,14 @@
             </div>
           </article>
 
-          <!-- V. Círculo de quintas -->
           <article class="lesson-topic" id="circulo">
             <h5>V. Círculo de quintas</h5>
-            <p class="topic-subtitle">El mapa de todas las tonalidades.</p>
-            <p>El círculo de quintas organiza las 12 tonalidades mayores en un orden que revela su relación armónica. Las tonalidades vecinas comparten casi todas sus notas, lo que explica por qué es fácil modular entre ellas. También muestra cuántas alteraciones (sostenidos o bemoles) tiene cada tonalidad.</p>
+            <p class="topic-subtitle">Mapa tonal.</p>
+            <p>Este tema conserva un visual interactivo separado del resto.</p>
             <div class="component-stack">
               <div class="component-card">
-                <h6>Círculo interactivo</h6>
-                <p>Toca cualquier tonalidad para ver sus alteraciones y las notas que la componen.</p>
+                <h6>Visual interactivo</h6>
+                <p>Selecciona una tonalidad para ver sus alteraciones y notas.</p>
                 <div class="circle-wrap">
                   <svg id="csvg" width="300" height="300" viewBox="0 0 300 300"></svg>
                   <div class="cinfo">
@@ -925,90 +857,74 @@
               </div>
               <div class="component-card">
                 <h6>Video de apoyo</h6>
-                <p>Explicación del círculo de quintas y cómo usarlo para entender tonalidades y modulaciones.</p>
+                <p>Referencia externa para consolidar el mapa tonal.</p>
                 <div class="video-link-row">
-                  <a class="video-link" href="https://www.youtube.com/watch?v=BRBTCIK_9_g" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
+                  <a class="video-link" href="https://www.youtube.com/watch?v=O43EBVnwNvo" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- VI. Acordes -->
           <article class="lesson-topic" id="acordes">
             <h5>VI. Acordes</h5>
-            <p class="topic-subtitle">Varias notas sonando juntas.</p>
-            <p>Un acorde es la combinación de tres o más notas tocadas simultáneamente. La tríada es la forma más básica: se construye apilando dos intervalos de tercera sobre una nota raíz. El tipo de terceras que se usen determina si el acorde suena mayor, menor o disminuido. Los siete acordes que aparecen aquí son los que se construyen naturalmente sobre los grados de la escala de Do mayor.</p>
+            <p class="topic-subtitle">Construcción armónica.</p>
+            <p>Los acordes pueden escucharse y compararse en un componente aislado.</p>
             <div class="formula">Tríada mayor   = 3ª mayor (4 st) + 5ª justa (7 st)
 Tríada menor   = 3ª menor (3 st) + 5ª justa (7 st)
 Tríada dism.   = 3ª menor (3 st) + 5ª disminuida (6 st)</div>
             <div class="component-stack">
               <div class="component-card">
-                <h6>Acordes diatónicos de Do mayor</h6>
-                <p>Toca cualquier acorde para escucharlo. La nota dorada es la raíz; las demás son las tercera y quinta que lo completan.</p>
+                <h6>Tarjetas de acordes</h6>
+                <p>Haz clic en cualquier acorde para escucharlo.</p>
                 <div id="cg" class="chords-grid"></div>
                 <p class="tap-hint">Toca cualquier acorde para escucharlo</p>
               </div>
               <div class="component-card">
                 <h6>Video de apoyo</h6>
-                <p>Cómo se construyen las tríadas y qué hace que un acorde suene mayor, menor o disminuido.</p>
+                <p>Recurso externo para reforzar el concepto.</p>
                 <div class="video-link-row">
-                  <a class="video-link" href="https://www.youtube.com/watch?v=YDX4xULlkwc" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
+                  <a class="video-link" href="https://www.youtube.com/watch?v=0lns5Oq8d6c" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- VII. Nombres de acordes -->
           <article class="lesson-topic" id="nombres">
             <h5>VII. Nombres de acordes</h5>
-            <p class="topic-subtitle">Cómo leer el cifrado anglosajón.</p>
-            <p>Los acordes se nombran con una letra que indica la raíz y uno o varios símbolos que describen su calidad. Una letra sola (C) indica acorde mayor. Los sufijos añaden información sobre la tercera, la séptima u otras notas. Saber leer este cifrado permite interpretar cualquier partitura o canción escrita en formato de chord chart.</p>
+            <p class="topic-subtitle">Lectura de cifrado.</p>
+            <p>Este bloque combina explicación textual, audio de ejemplo y una referencia externa.</p>
             <div class="ddark">
-              <div class="dlabel">De lo simple a lo complejo</div>
+              <div class="dlabel">Ejemplos</div>
               <div class="dbig">C · Cm · C7 · Csus2 · Csus4</div>
               <div class="dstep">
                 <div class="dsym">C</div>
-                <div class="dtitle">Mayor — sin sufijo</div>
-                <div class="ddesc">Cuando aparece solo una letra mayúscula, el acorde es mayor. C = Do mayor (Do + Mi + Sol).</div>
+                <div class="dtitle">Mayor</div>
+                <div class="ddesc">Sin sufijo, el acorde se interpreta como mayor.</div>
               </div>
               <div class="dstep">
-                <div class="dsym">Cm</div>
-                <div class="dtitle">Menor — sufijo "m"</div>
-                <div class="ddesc">La "m" minúscula baja la tercera un semitono. Cm = Do menor (Do + Mi♭ + Sol). El acorde pierde brillo y gana tensión.</div>
+                <div class="dsym">m / 7 / sus</div>
+                <div class="dtitle">Calidad y extensión</div>
+                <div class="ddesc">Los símbolos definen si el acorde es menor, añade séptima o reemplaza la tercera.</div>
               </div>
-              <div class="dstep">
-                <div class="dsym">C7</div>
-                <div class="dtitle">Séptima dominante — sufijo "7"</div>
-                <div class="ddesc">El número 7 añade una séptima menor sobre la tríada mayor. C7 = Do + Mi + Sol + Si♭. Crea tensión que pide resolución hacia Fa.</div>
-              </div>
-              <div class="dstep">
-                <div class="dsym">Csus2 · Csus4</div>
-                <div class="dtitle">Acordes suspendidos — "sus"</div>
-                <div class="ddesc">"Sus" reemplaza la tercera por una segunda (sus2) o una cuarta (sus4). Sin tercera, el acorde queda suspendido: sin carácter mayor ni menor. El sus4 resuelve naturalmente hacia el acorde mayor.</div>
-              </div>
-              <button class="rbtn" onclick="playSus4Resolution()">▶ Escuchar resolución Csus4 → C</button>
+              <button class="rbtn" onclick="playSus4Resolution()">Escuchar resolución sus4</button>
             </div>
             <div class="component-card">
               <h6>Video de apoyo</h6>
-              <p>Guía completa para leer el cifrado de acordes y entender qué indica cada símbolo.</p>
+              <p>Referencia para lectura de cifrado y nombres de acordes.</p>
               <div class="video-link-row">
-                <a class="video-link" href="https://www.youtube.com/watch?v=qLeM6KxjPGs" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
+                <a class="video-link" href="https://www.youtube.com/watch?v=8d1u0F6K5v0" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
               </div>
             </div>
           </article>
-
         </div>
       </section>
 
-      <!-- ============================================================
-           CLASE 02
-      ============================================================= -->
       <section class="class-panel card" id="clase-02">
         <div class="class-header">
           <div>
             <div class="eyebrow">Clase 02</div>
             <h3>Primeros acordes y ritmo básico</h3>
-            <p>De la teoría a las manos: leer acordes simples, mantener un pulso estable y comenzar a conectar cambios con fluidez.</p>
+            <p>La siguiente clase en la secuencia, pensada como una experiencia más práctica y enfocada en aplicar fundamentos a progresiones, pulso y lectura funcional.</p>
             <div class="class-meta">
               <span class="tag">Acordes</span>
               <span class="tag">Ritmo</span>
@@ -1025,44 +941,153 @@ Tríada dism.   = 3ª menor (3 st) + 5ª disminuida (6 st)</div>
 
         <div class="section-block">
           <h4>Propósito de la clase</h4>
-          <p>Llevar al estudiante desde el reconocimiento teórico de los acordes hacia su primera experiencia de ejecución: leer un chord chart básico, colocar los dedos con precisión, mantener un pulso estable y comenzar a conectar cambios con algo de musicalidad.</p>
+          <p>Llevar al estudiante desde el reconocimiento teórico hacia la ejecución básica: leer acordes simples, mantener un pulso estable y comenzar a conectar cambios con musicalidad.</p>
         </div>
 
         <div class="section-block">
           <h4>Contenido principal</h4>
           <ul>
-            <li>Lectura básica de diagramas de acordes y chord charts.</li>
-            <li>Comprensión del pulso y del conteo en compases de 4/4.</li>
+            <li>Lectura básica de diagramas o chord charts.</li>
+            <li>Comprensión inicial del pulso y del conteo en compases simples.</li>
             <li>Aplicación de una progresión corta con cambios lentos entre acordes.</li>
           </ul>
         </div>
 
         <div class="section-block">
           <h4>Ejercicios</h4>
-
           <article class="lesson-topic" id="ejemplo-ej-1">
             <h5>Ejercicio 1. Cambio entre dos acordes</h5>
-            <p class="topic-subtitle">Precisión y memoria muscular.</p>
-            <p>Alternar lentamente entre dos acordes sencillos (por ejemplo, C y Am) buscando que cada nota suene limpia antes de aumentar la velocidad. El objetivo no es ir rápido: es que los dedos aprendan el camino sin que la mente tenga que dirigir cada movimiento.</p>
+            <p class="topic-subtitle">Enfoque en precisión y memoria muscular.</p>
+            <p>Alternar entre dos acordes sencillos buscando una colocación limpia de los dedos antes de aumentar velocidad.</p>
           </article>
 
           <article class="lesson-topic" id="ejemplo-ej-2">
             <h5>Ejercicio 2. Pulso constante</h5>
-            <p class="topic-subtitle">Estabilidad rítmica desde el primer día.</p>
-            <p>Practicar un patrón simple de rasgueo o pulsación —cuatro golpes por compás— manteniendo un conteo en voz alta o con metrónomo. La regularidad rítmica es la base de todo lo que viene después. Un acorde mal colocado se puede corregir; un pulso inestable es mucho más difícil de revertir con el tiempo.</p>
-          <div class="component-card">
-              <h6>Video de apoyo</h6>
-              <p>Por qué medimos el RITMO así? Compás de 4/4, 2/4, 6/8, 3/4... </p>
-              <div class="video-link-row">
-                <a class="video-link" href="https://www.youtube.com/watch?v=faBivRMi2LY" target="_blank" rel="noopener">▶ Ver video en YouTube</a>
+            <p class="topic-subtitle">Enfoque en ritmo básico.</p>
+            <p>Practicar un patrón simple de rasgueo o pulsación manteniendo conteo regular para desarrollar estabilidad rítmica.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="class-panel card" id="clase-03">
+        <div class="class-header">
+          <div>
+            <div class="eyebrow">Clase 03</div>
+            <h3>Voicing: acordes en piano y guitarra</h3>
+            <p>Mismas notas, distinto camino. Un acorde tiene siempre los mismos tonos esenciales, pero piano y guitarra los distribuyen de formas muy diferentes. Entender esta diferencia cambia cómo escuchas y cómo tocas.</p>
+            <div class="class-meta">
+              <span class="tag">Voicing</span>
+              <span class="tag">Guitarra</span>
+              <span class="tag">Piano</span>
+              <span class="tag">Duplicación de notas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-links">
+          <a class="resource-link" href="#voicing-intro">¿Qué es un voicing?</a>
+          <a class="resource-link" href="#voicing-piano">El acorde en el piano</a>
+          <a class="resource-link" href="#voicing-guitarra">El acorde en la guitarra</a>
+          <a class="resource-link" href="#voicing-ejercicio">Ejercicio práctico</a>
+        </div>
+
+        <div class="section-block">
+          <h4>Propósito de la clase</h4>
+          <p>Entender que un acorde no es solo una lista de notas, sino una forma específica de distribuirlas en un instrumento. Esta clase muestra cómo piano y guitarra resuelven el mismo problema de formas muy distintas, y por qué eso importa para el estudiante de guitarra.</p>
+        </div>
+
+        <div class="section-block">
+          <h4>Contenido principal</h4>
+
+          <article class="lesson-topic" id="voicing-intro">
+            <h5>I. ¿Qué es un voicing?</h5>
+            <p class="topic-subtitle">El mismo acorde, muchas formas de decirlo.</p>
+            <p>Cuando hablamos de un acorde de <strong>Do mayor</strong>, estamos hablando de tres notas: Do, Mi y Sol. Eso es el acorde en su forma más esencial. El <em>voicing</em> es la decisión sobre cómo distribuir esas notas en el instrumento: cuál va abajo, cuál va arriba, cuáles se repiten y en qué octava aparece cada una.</p>
+            <p>Piano y guitarra tienen estructuras físicas completamente distintas, por eso llegan al mismo acorde por caminos diferentes.</p>
+            <div class="ddark">
+              <div class="dlabel">Concepto clave</div>
+              <div class="dbig">Do · Mi · Sol</div>
+              <div class="dstep">
+                <div class="dsym">Tono</div>
+                <div class="dtitle">El material del acorde</div>
+                <div class="ddesc">Las tres notas que definen el acorde de Do mayor. Sin importar el instrumento, estas son las notas que deben estar presentes.</div>
+              </div>
+              <div class="dstep">
+                <div class="dsym">Voicing</div>
+                <div class="dtitle">La forma de decirlo</div>
+                <div class="ddesc">La distribución específica de esas notas: cuáles se repiten, en qué orden aparecen, qué octava ocupa cada una. Esto cambia según el instrumento y la intención musical.</div>
+              </div>
+              <button class="rbtn" onclick="playVoicingDemo()">Escuchar Do mayor (arpegio)</button>
+            </div>
+          </article>
+
+          <article class="lesson-topic" id="voicing-piano">
+            <h5>II. El acorde en el piano</h5>
+            <p class="topic-subtitle">Tres notas, dos manos, distribución precisa.</p>
+            <p>En el piano, cuando das un acorde de Do mayor en posición fundamental, tocas exactamente tres notas: <strong>Do, Mi y Sol</strong>. La mano derecha sostiene el acorde y la mano izquierda refuerza el bajo, usualmente con la nota raíz (Do). Cada tecla que presionas produce una sola nota, sin ambigüedad.</p>
+            <p>Esto hace que el voicing en piano sea muy deliberado: el pianista elige exactamente qué notas toca y en qué octava. No hay cuerdas adicionales que añadan duplicaciones de forma automática.</p>
+            <div class="component-stack">
+              <div class="component-card">
+                <h6>Visualización en el teclado</h6>
+                <p>Las notas marcadas en verde son Mi y Sol. La raíz Do aparece en dorado. Así se ve el acorde de Do mayor en posición fundamental.</p>
+                <div class="piano-wrap"><div id="piano-voicing-piano"></div></div>
+                <p class="tap-hint">Toca las notas marcadas para escucharlas</p>
+              </div>
+              <div class="component-card">
+                <h6>La lógica del piano</h6>
+                <p>Mano derecha: Do · Mi · Sol (las tres notas del acorde). Mano izquierda: Do grave (el bajo). Total de teclas presionadas: 4, pero solo 3 notas distintas. El Do aparece dos veces, en octavas diferentes.</p>
               </div>
             </div>
           </article>
 
+          <article class="lesson-topic" id="voicing-guitarra">
+            <h5>III. El acorde en la guitarra</h5>
+            <p class="topic-subtitle">Tres notas esenciales, seis cuerdas, muchas repeticiones.</p>
+            <p>Aquí está la diferencia fundamental. En la guitarra, cuando tocas un acorde de Do mayor usando los dedos estándar, las <strong>seis cuerdas suenan al mismo tiempo</strong>, pero el acorde sigue siendo Do, Mi y Sol. Lo que ocurre es que esas tres notas se distribuyen y se <em>repiten</em> a través de las seis cuerdas en distintas posiciones y octavas.</p>
+            <p>Con solo tres dedos presionando tres cuerdas, las otras cuerdas suenan al aire y contribuyen notas que ya pertenecen al acorde. El resultado es un sonido más lleno, con más capas de la misma armonía.</p>
+            <div class="formula">Acorde de Do mayor en guitarra (posición abierta):
+
+Cuerda 6 (Mi grave)  →  no se toca
+Cuerda 5 (La)        →  Do  (2do traste)
+Cuerda 4 (Re)        →  Mi  (2do traste)
+Cuerda 3 (Sol)       →  Sol (al aire)
+Cuerda 2 (Si)        →  Do  (1er traste)
+Cuerda 1 (Mi agudo)  →  Mi  (al aire)
+
+Notas presentes: Do · Mi · Sol · Do · Mi
+Notas únicas:    Do · Mi · Sol  (las mismas 3)</div>
+            <div class="component-stack">
+              <div class="component-card">
+                <h6>Lo que cambia y lo que no</h6>
+                <p>El material armónico es idéntico al del piano: Do, Mi y Sol. Lo que cambia es la cantidad de veces que cada nota aparece y la octava en que suena. Esto produce un sonido más denso y resonante, característico de la guitarra.</p>
+              </div>
+              <div class="component-card">
+                <h6>¿Por qué importa esto?</h6>
+                <p>Entender que las cuerdas "extras" no son notas nuevas, sino repeticiones del mismo acorde, ayuda a leer y memorizar posiciones con más lógica. No estás aprendiendo 6 notas nuevas — estás aprendiendo cómo distribuir 3 notas en 5 o 6 cuerdas.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson-topic" id="voicing-ejercicio">
+            <h5>Ejercicio práctico</h5>
+            <p class="topic-subtitle">Identificar las notas dentro del acorde.</p>
+            <p>Toma el acorde de Do mayor en guitarra. Cuerda por cuerda, nombra la nota que suena. Luego verifica si pertenece al conjunto Do · Mi · Sol. Repite con Re menor (Re · Fa · La) y Sol mayor (Sol · Si · Re).</p>
+            <div class="component-stack">
+              <div class="component-card">
+                <h6>Escuchar el acorde de Do mayor</h6>
+                <p>El siguiente botón reproduce las notas del acorde de Do mayor en forma de arpegio, igual a como suenan en la guitarra cuando se rasguea cuerda por cuerda.</p>
+                <button class="rbtn" onclick="playVoicingDemo()">▶ Escuchar Do mayor (arpegio)</button>
+              </div>
+              <div class="component-card">
+                <h6>Aplicar a otros acordes</h6>
+                <p>Practica identificando las notas de Re menor y Sol mayor usando el mismo proceso. ¿Cuántas veces aparece la raíz en cada acorde? ¿Qué nota se repite más?</p>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <p class="footer-note">Repositorio de clases de teoría musical. Los ejemplos sonoros funcionan directamente en el navegador sin requerir plugins ni conexión externa.</p>
+      <p class="footer-note">Este HTML está ajustado para funcionar en preview sin requerir iframes externos. Cuando quieras, puedo hacer una segunda versión con embeds para exportación web.</p>
     </main>
   </div>
 
@@ -1411,6 +1436,16 @@ Tríada dism.   = 3ª menor (3 st) + 5ª disminuida (6 st)</div>
 
     window.playSus4Resolution = AudioEngine.playSus4Resolution;
 
+    // Clase 03: arpegio de Do mayor simulando rasgueo de guitarra (5 cuerdas: Do·Mi·Sol·Do·Mi)
+    window.playVoicingDemo = function () {
+      var arpNotes = [0, 4, 7, 0, 4]; // Do·Mi·Sol·Do·Mi
+      var delays   = [0, 0.10, 0.20, 0.30, 0.40];
+      var octs     = [0, 0,   0,   1,   1];
+      arpNotes.forEach(function (n, i) {
+        AudioEngine.playNote(n, 1.6, delays[i], octs[i]);
+      });
+    };
+
     document.addEventListener('DOMContentLoaded', function () {
       PianoComponent.build('piano-main', {}, function (s, oct) {
         AudioEngine.playNote(s, 1.4, 0, oct);
@@ -1419,6 +1454,10 @@ Tríada dism.   = 3ª menor (3 st) + 5ª disminuida (6 st)</div>
       ScaleComponent.init();
       CircleComponent.init();
       ChordsComponent.init();
+      // Clase 03: piano con Do mayor resaltado
+      PianoComponent.build('piano-voicing-piano', { hlNotes: [4, 7], rootSemi: 0 }, function (s, oct) {
+        AudioEngine.playNote(s, 1.4, 0, oct);
+      });
       NavComponent.init();
     });
   </script>
